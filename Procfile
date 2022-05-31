@@ -1,1 +1,1 @@
-web: env > .env; npm install -g foreman; nf start --procfile ProcfileFree
+web: npm install -g foreman; nf start --procfile ProcfileFree

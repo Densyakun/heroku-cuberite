@@ -1,0 +1,2 @@
+web: npm install -g tcp-websocket-tunnel; tcp-websocket-tunnel --from $PORT --toport 25565
+worker: sh worker.sh

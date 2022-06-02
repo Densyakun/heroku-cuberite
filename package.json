@@ -3,7 +3,7 @@
     "start": "node server.js"
   },
   "name": "heroku-cuberite",
-  "description": "",
+  "description": "Cuberite server on Heroku.",
   "version": "1.0.0",
   "main": "server.js",
   "repository": {

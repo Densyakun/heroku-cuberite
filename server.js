@@ -7,11 +7,7 @@ fastify.get('/ws', { websocket: true }, async (connection, req) => toTCPOnConnec
 
 fastify.register(proxy, {
   upstream: `http://localhost:${process.env.CUBERITE_WEBADMIN_PORT || 8080}`,
-  prefix: '/webadmin/',
-})
-
-fastify.get('/webadmin', async (req, reply) => {
-  reply.redirect('/webadmin/')
+  prefix: '/',
 })
 
 const start = async () => {

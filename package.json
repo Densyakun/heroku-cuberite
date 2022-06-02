@@ -1,1 +1,25 @@
-{}
+{
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "heroku-cuberite",
+  "description": "",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Densyakun/heroku-cuberite.git"
+  },
+  "keywords": [],
+  "author": "Densyakun <densyakun1128@gmail.com> (https://densyakun.github.io/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Densyakun/heroku-cuberite/issues"
+  },
+  "homepage": "https://github.com/Densyakun/heroku-cuberite#readme",
+  "dependencies": {
+    "@fastify/websocket": "^5.0.0",
+    "fastify": "^3.29.0",
+    "tcp-websocket-tunnel": "^1.3.0"
+  }
+}

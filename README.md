@@ -8,7 +8,7 @@
 ```bash
 npm install -g tcp-websocket-tunnel
 
-tcp-websocket-tunnel --from 25565 --tows ws://***.herokuapp.com/
+tcp-websocket-tunnel --from 25565 --tows ws://***.herokuapp.com/ws
 ```
 
 3. Launch minecraft client

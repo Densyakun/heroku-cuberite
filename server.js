@@ -3,7 +3,7 @@ fastify.register(require('@fastify/websocket'))
 const { toTCPOnConnection } = require('tcp-websocket-tunnel')
 const proxy = require('@fastify/http-proxy')
 
-fastify.get('/ws', { websocket: true }, (connection, req) => toTCPOnConnection(connection.socket, 25565, 'localhost'))
+fastify.get('/ws', { websocket: true }, async (connection, req) => toTCPOnConnection(connection.socket, 25565, 'localhost'))
 
 fastify.register(proxy, {
   upstream: `http://localhost:${process.env.CUBERITE_WEBADMIN_PORT || 8080}`,

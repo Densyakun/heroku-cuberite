@@ -18,10 +18,9 @@
   },
   "homepage": "https://github.com/Densyakun/heroku-cuberite#readme",
   "dependencies": {
+    "@fastify/http-proxy": "^7.1.0",
     "@fastify/websocket": "^5.0.0",
     "fastify": "^3.29.0",
-    "fastify-express": "^0.4.0",
-    "http-proxy-middleware": "^2.0.6",
     "tcp-websocket-tunnel": "^1.3.0"
   }
 }

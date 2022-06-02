@@ -1,18 +1,18 @@
 const fastify = require('fastify')()
 fastify.register(require('@fastify/websocket'))
 const { toTCPOnConnection } = require('tcp-websocket-tunnel')
-await fastify.register(require('fastify-express'))
-const { createProxyMiddleware } = require('http-proxy-middleware')
+const proxy = require('@fastify/http-proxy')
 
 fastify.get('/ws', { websocket: true }, (connection, req) => toTCPOnConnection(connection.socket, 25565, 'localhost'))
 
-fastify.use(
-  '/webadmin',
-  createProxyMiddleware({
-    target: `http://localhost:${process.env.CUBERITE_WEBADMIN_PORT}`,
-    changeOrigin: true,
-  })
-)
+fastify.register(proxy, {
+  upstream: `http://localhost:${process.env.CUBERITE_WEBADMIN_PORT || 8080}`,
+  prefix: '/webadmin/',
+})
+
+fastify.get('/webadmin', async (req, reply) => {
+  reply.redirect('/webadmin/')
+})
 
 const start = async () => {
   try {

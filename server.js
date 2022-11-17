@@ -25,4 +25,3 @@ const onSignal = (signal) => {
   process.exit(1)
 }
 process.on('SIGTERM', onSignal)
-process.on('SIGINT', onSignal)

@@ -19,3 +19,10 @@ const start = async () => {
   }
 }
 start()
+
+const onSignal = (signal) => {
+  console.log(`Got ${signal}.`)
+  process.exit(1)
+}
+process.on('SIGTERM', onSignal)
+process.on('SIGINT', onSignal)
